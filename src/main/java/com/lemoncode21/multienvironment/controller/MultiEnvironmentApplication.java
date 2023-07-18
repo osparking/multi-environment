@@ -1,4 +1,4 @@
-package com.howto.OAuth2ResourceServer;
+package com.lemoncode21.multienvironment.controller;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
