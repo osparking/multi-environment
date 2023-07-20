@@ -2,7 +2,7 @@ spring:
   application:
     name: SpringBoot-Multi-Environment
   profiles:
-    active: @profileActive@
+    active: "@profileActive@"
 
 server:
   port: 8081
@@ -11,13 +11,12 @@ server:
     
 # development configuration
 
-# development configuration
-
 ---
 spring:
   config:
-    active:
-      on-profile: development
+    activate:
+      on-profile:
+      - development
   datasource:
     url: jdbc:postgresql://localhost:5432/dev_db
     username: postgres
@@ -28,8 +27,9 @@ spring:
 ---
 spring:
   config:
-    active:
-      on-profile: staging
+    activate:
+      on-profile: 
+      - staging
   datasource:
     url: jdbc:postgresql://localhost:5432/staging_db
     username: postgres
@@ -40,7 +40,7 @@ spring:
 ---
 spring:
   config:
-    active:
+    activate:
       on-profile: production
   datasource:
     url: jdbc:postgresql://localhost:5432/production_db
