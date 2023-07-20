@@ -2,7 +2,7 @@ spring:
   application:
     name: SpringBoot-Multi-Environment
   profiles:
-    active: "@profileActive@"
+    active: '@profileActive@'
 
 server:
   port: 8081
@@ -18,7 +18,7 @@ spring:
       on-profile:
       - development
   datasource:
-    url: jdbc:postgresql://localhost:5432/dev_db
+    url: jdbc:h2:mem:hamburger
     username: postgres
     password: postgres
 
@@ -31,7 +31,7 @@ spring:
       on-profile: 
       - staging
   datasource:
-    url: jdbc:postgresql://localhost:5432/staging_db
+    url: jdbc:mariadb://localhost:3306/hamburger
     username: postgres
     password: postgres
 
@@ -43,6 +43,6 @@ spring:
     activate:
       on-profile: production
   datasource:
-    url: jdbc:postgresql://localhost:5432/production_db
+    url: jdbc:postgresql://localhost:5432/hamburger
     username: postgres
     password: postgres      
