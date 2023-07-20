@@ -14,4 +14,12 @@ public class HowController {
 	public String homepage() {
 		return "지금 활동 중인 프로필: " + profile;
 	}
+	
+	@Value(value = "${spring.datasource.url}")
+	private String dbUrl;
+	
+	@GetMapping("/url")
+	public String getDbUrl() {
+		return "사용할 DB URL: " + dbUrl;
+	}
 }
